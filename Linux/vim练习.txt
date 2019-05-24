@@ -1,0 +1,36 @@
+vim配置：https://www.cnblogs.com/highway-9/p/5984285.html
+    git clone https://github.com/chxuan/vimplus.git ~/.vimplus
+    cd ~/.vimplus
+    ./install.sh
+vim练习：体会各种操作的效果
+	1. 模式切换：
+		普通模式-》插入模式
+			i I a A o O s
+			
+		插入模式-》普通模式
+			esc
+		普通模式-》底行模式
+			：
+	2. 普通模式下的操作：
+		dd 3dd	按行删除
+		yy 3yy	按行复制
+		p	粘贴
+		dw	删除单词
+		x	删除字符
+		D	删除光标后的数据
+		u	撤销操作
+		ctrl+r	反向撤销
+		r	字符替换
+		R	连续替换
+		gg=G	全文对齐
+		hjkl	移动光标
+		w	光标向后移动一个单词
+		b	光标向前移动一个单词
+		ctrl+f	向下翻页
+		ctrl+b	向上翻页
+	2. 底行模式的操作：
+		:w	保存
+		:q	退出
+		:q!	强制退出，退出不保存
+		:wq	保存并退出
+		:!ls	执行命令

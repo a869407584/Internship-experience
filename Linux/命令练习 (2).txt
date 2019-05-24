@@ -1,0 +1,26 @@
+1. 将之前所创建的目录和文件全部清理掉
+2. 在家目录下创建 ~/workspace/cmd 目录以及 ~/workspace/tmp/test 目录（什么是家目录？）
+3. 进入 ~/workspace/cmd 目录，创建一个空文件my.txt
+4. 使用重定向>>与echo命令向my.txt文件写入 hello world 数据
+5. 将my.txt复制一份到~/workspace/tmp/test目录下
+6. 将~/workspace/tmp/test目录移动剪切到~/workspace/下
+7. 清空~/workspace/下的空目录
+8. 刷新~/workspace/cmd/my.txt文件的时间属性与家目录时间相同
+9. 打印~/workspace/cmd/my.txt文件全部内容到终端显示上
+10. 分页显示/etc/passwd的内容到显示终端上
+11. 在分页显示的内容中匹配root字符
+12. 显示/etc/passwd文件的前五行数据
+13. 显示/etc/passwd文件的后五行数据
+14. 动态打印显示~/workspace/cmd/my.txt的最后一行数据
+15. 显示/etc/passwd文件中包含Root字符串的行，并显示行号忽略大小写
+16. 查找~/workspace/目录下名字包含my字符串的文件
+17. 查找~/workspace/目录下最后一次修改时间在10分钟以内的文件
+18. 显示系统时间的时间戳，日历
+19. 以“月-日 时:分”格式显示当前系统时间
+19. 修改文件~/workspace/cmd/my.txt的权限为651（代表什么权限？）
+20. 如何使系统默认创建文件的权限为666？ 记得修改回来
+21. 修改~/workspace/tmp/目录的权限为其他用户可以进入但是不能查看其中内容也不能在其中创建文件
+22. 修改~/workspace/cmd/目录权限为可以浏览或进入或创建文件，但是不能删除别人的文件
+23. 打印/etc/passwd文件的第五行数据
+
+24. 熟练使用tab键的自动补全功能
