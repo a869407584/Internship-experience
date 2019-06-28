@@ -1,0 +1,98 @@
+20190627主要讲解知识点：
+	1）实时时间的显示。
+	2）摄像头的移植与使用。
+	3）整合整个系统，完成要求的功能。
+	
+一 、实时时间的显示
+	1）如何查看和修改GEC6818开发板时间。
+		查看时间：date
+		修改时间：
+			1）通过终端命令修改
+				年月日： date -s 2019-06-27
+				时分秒： date -s 09:12:50
+			2）通过程序修改
+				system
+				#include <stdlib.h>
+				int system(const char *command);
+				
+				system("date -s 2019-06-27");
+				system("date -s 09:12:50");
+	
+	2）如何通过程序获取系统时间
+	time、ctime
+	
+	man 3 time
+	#include <time.h>
+	time_t time(time_t *tloc);
+	time_t *tloc:存储时间的地址。（一般定义一个time_t类型的变量）
+	
+	ctime
+	功能：将time函数获取到的十进制的时间转化成字符串。
+	#include <time.h>
+    char *ctime(const time_t *timep);
+	const time_t *timep：通过time函数获取的到的存储时间的地址。
+	
+	"Wed Jun 26 18:27:48 2019"
+	
+	"2019" 7 "26" "18" "27" "48"
+	
+	atoi
+	功能：将字符串类型转化成整形。
+    #include <stdlib.h>
+    int atoi(const char *nptr);
+	const char *nptr：转化的字符串地址。
+	
+	strtok
+	功能：做字符串的切割。
+	#include <string.h>
+    char *strtok(char *str, const char *delim);
+	char *str：要切割的字符串地址。
+	const char *delim：以什么标准进行切割。以-、空格、：、|、……
+	
+	练习11：
+		实时显示系统时间。除了退出系统时关闭时间显示,
+	其它的界面切换后均显示时间， 显示的时间内容：年月日、时分秒。
+	（例如：2019-06-27   09:54:23）
+	
+二、头文件的制作
+	1）在main函数中编写好具体功能的算法。
+	2）将具体功能的算法进行函数封装。
+	3）创建两个文件(bmp.c/bmp.h)。bmp.c中存储函数的定义/bmp.h存储函数的声明。
+	4）在main.c文件中添加用户自定义的头文件。
+	
+	注意：编译时，需要将调用的函数C文件一起编译。
+	arm-linux-gcc *.c -o armmain
+	或者 arm-linux-gcc main.c bmp.c -o armmain
+	
+三、字库的使用。
+
+	"2019" "Jun" "27"  ====>  "2019-Jun-27"
+	字符串的拼接。
+	char time_buf[20];
+	bzero(time_buf, sizeof(time_buf));
+	sprintf(time_buf, "%s-%s-%s", "2019","Jun","27");
+
+四、摄像头的移植与使用。	
+	1）查看GEC6818开发板中摄像头的设备号。
+		1）[root@GEC6818 ~/project]#cd /dev/
+		video0
+		video1
+		video2
+		video3
+		video4
+		video5
+		video6
+		
+		2）插上摄像头，再次查看
+		video0
+		video1
+		video2
+		video3
+		video4
+		video5
+		video6
+		video7
+		
+		3）通过两次对比，找到设备号:/dev/video7
+		
+		

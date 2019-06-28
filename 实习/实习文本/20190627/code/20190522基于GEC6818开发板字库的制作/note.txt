@@ -1,0 +1,33 @@
+		1）man 3 time
+		头文件：
+			#include <time.h>
+		函数的声明：
+			time_t time(time_t *tloc);
+		形参：	
+			time_t *tloc：存储系统的时间。
+		功能：
+			获取系统时间给tloc。
+
+		返回值：
+			成功：返回系统的时间。
+			失败： -1.
+
+		//printf("ptloc = %ld\n", ptloc);
+		//ptloc = 1535577553
+		
+		
+		2）man 3 ctime
+		头文件：
+			#include <time.h>
+		函数的声明：
+			 char *ctime(const time_t *timep);
+		形参：	
+			const time_t *timep：需要转化的系统时间。
+		功能：
+			转化系统时间。
+
+		返回值：
+			成功：转化后的系统的时间。
+			失败： -1.		
+
+		//time= Wed Aug 29 15:54:03 2018
